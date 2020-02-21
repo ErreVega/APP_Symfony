@@ -1,0 +1,31 @@
+{% extends "main.html.twig" %}
+
+{% block title %}Perfil de {{user_name}}{% endblock %}
+{% block content %}
+    <img class="image right-align table-bordered m-3" src=" + {{ photo_path  }} " alt="Foto" width="250px">
+    <div class="content m-3">
+    <div class="flex-container left-align">
+           <div>Nombre  {{user_name}} </div>
+        </div>
+    <br>
+    <div class="flex-container left-align">
+           <div>Descripción  {{description}}  </div>
+        </div>
+    <br>
+    <div class="flex-container left-align">
+           <div>Edad  {{age}}  </div>
+        </div>
+    <br>
+    <div class="flex-container left-align">
+           <div>Dirección  {{address}}  </div>
+        </div>
+    </div>
+    <br>
+
+    {% if app.user.userid == consulted_user_id %}
+        <br><br><br><br>
+        <button id="btnPerfil" onclick="loadModifyProfile()" type="button" class="btn btn-primary right-align">Modificar perfil</button>
+    {% endif %}
+
+
+{% endblock %}
